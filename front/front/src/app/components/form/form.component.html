@@ -1,0 +1,130 @@
+<body style="background-color: #CCF7FF ;">
+    <form (ngSubmit)="form(registerForm)" #registerForm="ngForm">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-primary text-white" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center"
+                            style="background-color: #000; border-radius: 1rem;  ; border-color: black;">
+                            <div class="mb-md-5 mt-md-4 pb-5 m-2">
+                                <h2 class="fw-bold mb-2 text-uppercase">Form</h2>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input [(ngModel)]="formM.name" placeholder="ejemp. Luis" name="ngModel"
+                                                #name="" type="text" class="form-control form-control-lg" required />
+                                            <label class="form-label">Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input [(ngModel)]="formM.address" placeholder="ejemp. Zona1" name="ngModel"
+                                                #username="" type="text" id="Address"
+                                                class="form-control form-control-lg" required />
+                                            <label class="form-label" for="Address">Address</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input [(ngModel)]="formM.number" placeholder="ejemp. 12345678 "
+                                                name="ngModel" #username="" type="text" id="Number"
+                                                class="form-control form-control-lg" required />
+                                            <label class="form-label" for="Number">Number</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input [(ngModel)]="formM.date" placeholder="ejemp. 17" name="age"
+                                                #username="" type="text" id="Age" class="form-control form-control-lg"
+                                                required />
+                                            <label class="form-label" for="Age">Age</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input [(ngModel)]="formM.poetry" placeholder=" ejemp. épica" name="poetry"
+                                                #username="" type="text" id="Poetry"
+                                                class="form-control form-control-lg" required />
+                                            <label class="form-label" for="Poetry">Poetry</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input [(ngModel)]="formM.student" placeholder="ejemp. Mecánica"
+                                                name="student" #username="" type="text" id="Study"
+                                                class="form-control form-control-lg" required />
+                                            <label class="form-label" for="Study">Study</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input [(ngModel)]="formM.carne" placeholder="Id" name="id" #username=""
+                                                type="text" id="Id" class="form-control form-control-lg" required />
+                                            <label class="form-label" for="Id" placeholder="ejemp. A2533">Id</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input [(ngModel)]="formM.gender" placeholder="ejemp. masculino o femenino"
+                                                name="gender" #username="" type="text" id="Gender"
+                                                class="form-control form-control-lg" required />
+                                            <label class="form-label" for="Gender" laceholder="Username">Gender</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center pt-1 mb-5 pb-1">
+                                <button class="btn btn-outline-success btn-block fa-lg m-3"
+                                    type="submit">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="text-center pt-1  pb-1">
+        <button class="btn btn-outline-success btn-block fa-lg m-3" type="submit" data-bs-target="#addOffic"
+            data-bs-toggle="modal">Report</button>
+    </div>
+</body>
+
+
+<div class="modal" id="addOffic">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Report</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="m-4 text-center table-responsive">
+                    <table class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Study</th>
+                                <th scope="col">Inscription</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let form of forms; let i = index">
+                                <th>{{i+1 }}</th>
+                                <td>{{form.name}}</td>
+                                <td>{{form.student}}</td>
+                                <td>{{form.enrollmentDate}}</td>
+                                <td></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
