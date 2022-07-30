@@ -66,8 +66,7 @@ exports.registerForm = async (req, res) => {
     if (data.carne.charAt(4) === "1") {
       const d = new Date();
       return res.send({
-        message: "Your poetry genre is Drama " + d.setMonth(d.getMonth() + 2),
-      });
+        message: "Your poetry genre is Drama "});
     }
     if (data.carne.charAt(4) === "3") {
       return res.send({ message: "Your poetry genre is Epic" });
